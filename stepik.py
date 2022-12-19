@@ -69,7 +69,10 @@
 #print(f'Аденин: {s.count("а")}\nГуанин: {s.count("г")}\nЦитозин: {s.count("ц")}\nТимин: {s.count("т")}')
 
 
-s = 'fvdfv45424g'
-counter = 0
-for i in range (0, 9):
-    if s.count(i) > 0:
+#s = 'fvdfv45424g'
+#counter = 0
+#for i in range (0, 9):
+#    if s.count(i) > 0:
+
+s = 'In {0}, someone paid {1} {2} for two pizzas.'.format('2010', '10k', 'Bitcoin')
+print(s)
