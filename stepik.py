@@ -1,32 +1,35 @@
 #Некоторые упражнения из курса "Поколение Python": курс для начинающих
 #Заодно и учимся использовать git
+'''
+a, b = 10, 20
+max_x = 0
+max_j = 0
+for i in range(a, b + 1):
+    x = 0
+    print(i)
+    for j in range(1, b + 1, 1):
+        if (i % j) == 0:
+            x = j + x
+            if max_x <= x and max_j < j:
+                max_x = x
+                max_j = j
+print(max_j, max_x)
+'''
 
-#a, b = 10, 20
-#max_x = 0
-#max_j = 0
-#for i in range(a, b + 1):
-#    x = 0
-#    print(i)
-#    for j in range(1, b + 1, 1):
-#        if (i % j) == 0:
-#            x = j + x
-#            if max_x <= x and max_j < j:
-#                max_x = x
-#                max_j = j
-#print(max_j, max_x)
-
-#n = 734573659783465783465978346593487
-#x = 0
-#while n != 0:
-#    n_1 = n % 10
-#    n = n // 10
-#    x = n_1 + x
-#if x > 9:
-#    while x > 9:
-#        x = x - 9
-#    print(x)
-#else:
-#    print(x)
+'''
+n = 734573659783465783465978346593487
+x = 0
+while n != 0:
+    n_1 = n % 10
+    n = n // 10
+    x = n_1 + x
+if x > 9:
+    while x > 9:
+        x = x - 9
+    print(x)
+else:
+    print(x)
+'''
 
 #n = 1
 #factorial = 1
