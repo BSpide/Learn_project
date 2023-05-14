@@ -55,7 +55,7 @@ for i in range(a, b + 1):
         print(i)
 '''
 
-
+'''
 #Числа Рамануджана
 for a in range(1, 33):
     for b in range(1, 33):
@@ -88,9 +88,12 @@ for i in range (0, 9):
     if s.count(i) > 0:
 '''
 
-#s = 'АааГГЦЦцТТттт'
-#s = s.lower()
-#print(f'Аденин: {s.count("а")}\nГуанин: {s.count("г")}\nЦитозин: {s.count("ц")}\nТимин: {s.count("т")}')
+'''
+# Считаем количество вхождений букв из строки
+s = 'АааГГЦЦцТТттт'
+s = s.lower()
+print(f'Аденин: {s.count("а")}\nГуанин: {s.count("г")}\nЦитозин: {s.count("ц")}\nТимин: {s.count("т")}')
+'''
 
 '''
 languages = ['Chinese', 'Spanish', 'English', 'Hindi', 'Arabic', 'Bengali', 'Portuguese', 'Russian', 'Japanese', 'Lahnda']
@@ -103,19 +106,6 @@ umbers2 = [6]
 numbers3 = [7, 8, 9, 10, 11, 12, 13]
 print(numbers1 + numbers1 + (numbers2 * 8) + numbers3)
 '''
-
-#s = 'fvdfv45424g'
-#counter = 0
-#for i in range (0, 9):
-#    if s.count(i) > 0:
-
-#languages = ['Chinese', 'Spanish', 'English', 'Hindi', 'Arabic', 'Bengali', 'Portuguese', 'Russian', 'Japanese', 'Lahnda']
-#print(languages[::-1])
-
-#numbers1 = [1, 2, 3]
-#umbers2 = [6]
-#numbers3 = [7, 8, 9, 10, 11, 12, 13]
-#print(numbers1 + numbers1 + (numbers2 * 8) + numbers3)
 
 '''
 numbers = [2, 6, 3, 14, 10, 4, 11, 16, 12, 5, 4, 16, 1, 0, 8, 16, 10, 10, 8, 5, 1, 11, 10, 10, 12, 0, 0, 6, 14, 8, 2, 12, 14, 5, 6, 12, 1, 2, 10, 14, 9, 1, 15, 1, 2, 14, 16, 6, 7, 5]
@@ -141,7 +131,7 @@ print(snum)
 '''
 
 '''
-Заморочиться и вспомнить перебор по алфавиту без UNICOD
+# Заморочиться и вспомнить перебор по алфавиту без UNICOD
 alphabit = []
 counter = 0
 for i in range(97, 123):
@@ -150,13 +140,6 @@ for i in range(97, 123):
 print(alphabit)
 '''
 
-#snum = []
-#x = int(input())
-#for i in range(x):
-#    num = int(input())
-#    snum.append(pow(num, 3))
-#print(snum)
-
 '''
 alg = []
 x = int(input())
@@ -164,6 +147,12 @@ for i in range(1, x + 1):
     if x % i == 0:
         alg.append(i)
 print(alg)
+'''
+
+'''
+# задание на "молодежный сленг" (прибавляем к словам ки и переставляем буквы)
+s = 'проспал почти всю ночь'
+print(*[i[1:] + i[0] + 'ки' for i in input().split()])
 '''
 
 '''
@@ -206,12 +195,6 @@ def find_all(target, symbol):
     while num > 0:
         num -= 1
         return target.find(symbol)
-
-'''
-# задание на "молодежный сленг" (прибавляем к словам ки и переставляем буквы)
-s = 'проспал почти всю ночь'
-print(*[i[1:] + i[0] + 'ки' for i in input().split()])
-'''
 
 # Проверяем строку на палиндорм (убираем все кроме букв)
 def is_palindrome(text):
