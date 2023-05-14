@@ -237,3 +237,35 @@ def convert_to_python_case(text):
             s = text[:i] + '_' + text[i].lower() + text[i + 1:]
             text = s
     return print(text.lower())
+
+# Функции с возвратом значения
+# Середина отрезка
+def get_middle_point(x1, y1, x2, y2):
+    x = (x1 + x2)/2
+    y = (y1 + y2)/2
+    return x, y
+
+'''
+# Вычисляем середину отрезка
+x_1, y_1 = int(input()), int(input())
+x_2, y_2 = int(input()), int(input())
+x, y = get_middle_point(x_1, y_1, x_2, y_2)
+print(x, y)
+'''
+
+# Напишите функцию get_circle(radius), которая принимает в качестве аргумента радиус
+# окружности и возвращает два значения: длину окружности и площадь круга, ограниченного данной окружностью
+
+def get_circle(radius):
+    from math import pi             # Импортируем только pi из модуля math, при этом пишем не math.pi а просто pi
+    length = 2 * pi * radius
+    square = pi * (radius ** 2)
+    return length, square
+
+'''
+# вычисляем радиус и площадь круга
+r = float(input())
+length, square = get_circle(r)
+print(length, square)
+'''
+
