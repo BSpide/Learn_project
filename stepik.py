@@ -188,6 +188,69 @@ def find_all(target, symbol):
     while num > 0:
         num -= 1
         return target.find(symbol)
+    
+# Решение с помощью цикла и условий
+def find_all_2(target, symbol):
+    x = []
+    for i in range(len(target)):
+        if target[i] == symbol:
+            x.append(i)
+    return x
+
+#То же самое но с помощью списочных выражений
+def find_all_str(target, symbol):
+    return [i for i in range(len(target)) if target[i] == symbol]
+
+# Сортировка двух списков
+def merge(list1, list2):
+    return sorted(list1 + list2)
+
+'''
+# пример использования функции merge
+numbers1 = [int(c) for c in input().split()]
+numbers2 = [int(c) for c in input().split()]
+print(merge(numbers1, numbers2))
+'''
+
+#Слияние двух отсортированных списков
+def quick_merge(list1, list2):
+    result = []
+
+    p1 = 0  # указатель на первый элемент списка list1
+    p2 = 0  # указатель на первый элемент списка list2
+
+    while p1 < len(list1) and p2 < len(list2):  # пока не закончился хотя бы один список
+        if list1[p1] <= list2[p2]:
+            result.append(list1[p1])
+            p1 += 1
+        else:
+            result.append(list2[p2])
+            p2 += 1
+
+    if p1 < len(list1):  # прицепление остатка
+        result += list1[p1:]
+    if p2 < len(list2):
+        result += list2[p2:]
+
+    return result
+
+'''
+# Использование функции quick_merge 
+# На вход программе подается натуральное число n, а затем n строк,
+# содержащих целые числа в порядке возрастания, выводим все строки в одной отсортированной по возрастанию
+num = int(input())
+list3 =[]
+if num < 2:
+    print('Для сортировки нужно больше одного списка')
+elif num == 2:
+    print(quick_merge(input().split(), input().split()))
+elif num > 2:
+    for i in range(1, num + 1):
+        list1 = [int(q) for q in input().split()]   #Непонятная конструкция, надо разобрать че происходит до инпута-_-
+        list2 = list3
+        list3 = quick_merge(list1, list2)
+    print(list3)
+'''
 
 # Проверяем строку на палиндорм (убираем все кроме букв)
 def is_palindrome(text):
@@ -216,6 +279,31 @@ def is_prime(num):
     else:
         return False
 
+# Поиск следующего простого числа
+def get_next_prime(num):
+    num_2 = num + 1
+    while is_prime(num_2) == False:
+        num_2 += 1
+    return num_2
+
+# Проверка надежности пароля ))
+# объявление функции
+def is_password_good(password):
+    if len(password) < 8:
+        return False
+    elif password.isalpha() == True:
+        return False
+    elif password.isdigit() == True:
+        return False
+    elif password.islower() == True:
+        return False
+    elif password.isupper() == True:
+        return False
+    elif password.islower() == password.isupper() and password.isalnum() == False:
+        return False
+    else:
+        return True
+ 
 def is_valid_password(password):
     password = password.split(':')
     if len(password) != 3:
@@ -228,6 +316,19 @@ def is_valid_password(password):
         return False
     else:
         return True
+    
+# Сравниваем слова и выдает True если они отличаются только одним символом
+def is_one_away(word1, word2):
+    if word1 == word2 or len(word1) != len(word2):
+        return False
+    counter = 0
+    for i in range(len(word1)):
+        if word1[i] != word2[i]:
+            counter += 1
+    if counter == 1:
+        return True
+    else:
+        return False
 
 # Функция преобразования верблюжьего в змеиный регистр (из строки IsPrimeNumber получчается is_prime_number)
 def convert_to_python_case(text):
