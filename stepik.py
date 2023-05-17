@@ -370,3 +370,17 @@ length, square = get_circle(r)
 print(length, square)
 '''
 
+# 13.6 Функции с возвратом значения
+def solve(a, b, c):
+    from math import sqrt
+    D = (b ** 2) - (4 * a) * c
+    x_1: float = (-b + sqrt(D)) / (2 * a)
+    x_2: float = (-b - sqrt(D)) / (2 * a)
+    return min(x_1, x_2), max(x_1, x_2)
+
+'''
+# Запускаем функцию
+a, b, c = 1, -4, -5
+x_1, x_2 = solve(a, b, c)
+print(x_1, x_2)
+'''
