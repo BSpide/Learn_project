@@ -497,7 +497,23 @@ def is_pangram(text):
         return True
     else:
         return False
-
+'''
 # проверка
 text = input()
 print(is_pangram(text))
+'''
+
+# Гипотеза Эйлера о сумме степеней задача 7.8
+def eler():
+    counter = 1
+    for a in range(1, 151):
+        for b in range(a, 151):
+            for c in range(b, 151):
+                for d in range(c, 151):
+                    for e in range(d, 151):
+                        counter += 1
+                        if a**5 + b**5 + c**5 + d**5 == e**5:
+                            return print('БИНГО!!! Ответ = ', a+b+c+d+e, ' а=', a, ',b=', b, ',c=', c, ',d=', d, ',e=', e, ' Цикл №', counter, sep='')
+                        else:
+                            print('Не получилось :( ', 'а=', a, ',b=', b, ',c=', c, ',d=', d, ',e=', e, ' Cумма=', a+b+c+d+e, ' Цикл №', counter, sep='')
+eler()
