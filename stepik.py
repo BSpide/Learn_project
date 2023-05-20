@@ -369,6 +369,19 @@ r = float(input())
 length, square = get_circle(r)
 print(length, square)
 '''
+'''
+# Задача 13.6 Корни уравнения
+def solve(a, b, c):
+    (a * x**2)
+
+# считываем данные
+a, b, c = 1, -4, -5
+
+# вызываем функцию
+x1, x2 = solve(a, b, c)
+print(x1, x2)
+
+'''
 
 # 13.6 Функции с возвратом значения
 def solve(a, b, c):
@@ -384,3 +397,107 @@ a, b, c = 1, -4, -5
 x_1, x_2 = solve(a, b, c)
 print(x_1, x_2)
 '''
+
+# Экзамен на функции
+
+# Рисуем триугольник
+def draw_triangle():
+    a = 15
+    b = 8
+    for i in range(b):
+        print(' ' * ((a - 1 - i) // 2 ) + ('*' * (1 + i * 2)))
+        a -= 1
+
+# Цена доставки первого товара 1000 рэ, остальных 120 рэ, посчитать итого
+def get_shipping_cost(quantity):
+    shipping_1 = 1000
+    shipping_2 = 120
+    if quantity == 1:
+        return 1000
+    elif quantity > 1:
+        return 1000 + (quantity - 1) * 120
+    else:
+        return 'Невозможно расчитать стоимость доставки'
+
+# Вычисляем по формуле из задания
+def compute_binom(n, k):
+    from math import factorial
+    return int(factorial(n)/(factorial(k) * factorial(n - k)))
+
+# перевод цифр в слова
+def number_to_words(num):
+    list_1 = ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять', 'десять']
+    list_11 = ['одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать',
+               'восемнадцать', 'девятнадцать']
+    list_21 = ['двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто']
+    if num < 11:
+        return list_1[num - 1]
+    elif 10 < num < 20:
+        return list_11[num - 11]
+    elif 19 < num < 100:
+        a = str(num)
+        if a[1] == '0':
+            return list_21[(num // 10) - 2]
+        elif a[1] != '0':
+            num_1 = int(a[1])
+            x_1 = list_21[(num // 10) - 2]
+            x_2 = list_1[num_1 - 1]
+            x = x_1 + ' ' + x_2
+            return x
+
+# объявление функции
+def get_month(language, number):
+    month_ru = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
+    month_en = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+    if language != 'ru' and language != 'en' or 0 > number > 12:
+        return 'Ошибка ввода'
+    elif language == 'ru':
+        return month_ru[number - 1]
+    elif language == 'en':
+        return month_en[number - 1]
+
+'''
+хз здесь не пашет, но проверка прошла
+    Traceback (most recent call last):
+  File "D:\Python_Project\Learn_project\stepik.py", line 460, in <module>
+    num = int(input())
+ValueError: invalid literal for int() with base 10: ''
+# считываем данные
+lan = input()
+num = int(input())
+
+# вызываем функцию
+print(get_month(lan, num))
+'''
+
+
+# Магическая дата – это дата, когда день, умноженный на месяц, равен числу образованному последними двумя цифрами года.
+# Проверку на корректность ввода не делаем
+def is_magic(date):
+    dat = date.split('.')
+    dd = dat[0]
+    mm = dat[1]
+    eeee = dat[2]
+    ee = eeee[2:]
+    if int(dd) * int(mm) == int(ee):
+        return True
+    else:
+        return False
+'''
+# проверка
+date = '03.11.2032'
+print(is_magic(date))
+'''
+
+# Напишите функцию, is_pangram(text) которая принимает в качестве аргумента строку текста на английском языке и возвращает значение True если текст является панграммой и False в противном случае.
+def is_pangram(text):
+    text = text.replace(' ', '').lower()
+    print(set(text))
+    if len(set(text)) == 26:
+        return True
+    else:
+        return False
+
+# проверка
+text = input()
+print(is_pangram(text))
