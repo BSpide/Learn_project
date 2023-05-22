@@ -518,3 +518,20 @@ def eler():
                             print('Не получилось :( ', 'а=', a, ',b=', b, ',c=', c, ',d=', d, ',e=', e, ' Cумма=', a+b+c+d+e, ' Цикл №', counter, sep='')
 # ответ 498
 
+# Задача 15.2 на реализацию подсчета наименьшего количесва попыток для гадывания числа
+
+b = int(input())
+def ugadayka_num(b):
+    a = 1
+    counter = 0
+    x = 0
+    while x != b:
+        x = (a + b) // 2
+        if x < b:
+            a = x + 1
+        elif x > b:
+            b = x - 1
+        counter += 1
+    return print(counter)
+
+ugadayka_num(b)

@@ -13,7 +13,6 @@ def gen_num(a, b):
     global num
     num = random.randint(a, b)
 
-print(f'Попробуй угадать число в диапазоне от 1 до 100, сгенерированное случайным образом')
 def user_quastion(user_num):
     global u_num
     u_num = user_num
@@ -21,12 +20,19 @@ def user_quastion(user_num):
         print('Поиграем? угадай число:')
         user_num = int(input())
     elif user_num != '':
-        print('Никуя, попробуй еще разок:')
-        user_num = int(input())
+        comparison_num(num, u_num)
 
 def comparison_num(num, u_num):
-    pass
+    while num != u_num:
+        if num < u_num:
+            print('Слишком много, попробуйте еще раз')
+            u_num = int(input())
+        elif num > u_num:
+            print('Слишком мало, попробуйте еще раз')
+            u_num = int(input())
+    return print('Вы угадали, поздравляем!')
 
-gen_num()
+
+print('Попробуй угадать число в диапазоне от 1 до 100, сгенерированное случайным образом. Введите число: ')
+gen_num(a, b)
 user_quastion(int(input()))
-print(num)
