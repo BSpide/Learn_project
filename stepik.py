@@ -516,4 +516,5 @@ def eler():
                             return print('БИНГО!!! Ответ = ', a+b+c+d+e, ' а=', a, ',b=', b, ',c=', c, ',d=', d, ',e=', e, ' Цикл №', counter, sep='')
                         else:
                             print('Не получилось :( ', 'а=', a, ',b=', b, ',c=', c, ',d=', d, ',e=', e, ' Cумма=', a+b+c+d+e, ' Цикл №', counter, sep='')
-eler()
+# ответ 498
+
