@@ -32,6 +32,9 @@ def comparison_num(num, u_num):
             u_num = int(input())
     return print('Вы угадали, поздравляем!')
 
+def is_valid(u_num):
+    if u_num.isdigit() == True:
+
 
 print('Попробуй угадать число в диапазоне от 1 до 100, сгенерированное случайным образом. Введите число: ')
 gen_num(a, b)
