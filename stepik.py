@@ -519,7 +519,6 @@ def eler():
 # ответ 498
 
 # Задача 15.2 на реализацию подсчета наименьшего количесва попыток для гадывания числа
-
 b = int(input())
 def ugadayka_num(b):
     a = 1
@@ -534,4 +533,9 @@ def ugadayka_num(b):
         counter += 1
     return print(counter)
 
-ugadayka_num(b)
+# Посмотрел шпаргалку,делат через логоврифм по основанию 2 и округляют с помощью ceil
+def ugadayka_num_l(b):
+    import math
+    return print(math.ceil(math.log(b, 2)))
+
+ugadayka_num_l(b)
