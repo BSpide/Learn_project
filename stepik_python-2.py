@@ -42,3 +42,24 @@ def line_cost():
     """
     return print(f'{int(summa)} р. {(summa % 1) * 100:.0f} коп.')
 
+def spice_words():
+    #   считаем слова в строке
+    #   проверяем, что в строке есть не только пробелы
+    #   удаляем пробелы в начале и в конце строки
+    #   считаем ко-во пробелов +1
+    string = input()
+    if string.isspace() == True:
+        return print("В этой строке нет слов")
+    else:
+        string = string.split(" ")
+        return print(len(list(filter(None, string))))
+
+def spice_words_1():
+    print(len(input().split()))
+
+def china_goroskop():
+    #   Определить какой год по гороскопу
+    goroskop = ['Дракон','Змея','Лошадь','Овца','Обезьяна','Петух','Собака','Свинья','Крыса','Бык','Тигр','Заяц']
+    return print(goroskop[int(input()) % 12 - 8])
+
+china_goroskop()
