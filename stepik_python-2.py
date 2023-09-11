@@ -62,4 +62,34 @@ def china_goroskop():
     goroskop = ['Дракон','Змея','Лошадь','Овца','Обезьяна','Петух','Собака','Свинья','Крыса','Бык','Тигр','Заяц']
     return print(goroskop[int(input()) % 12 - 8])
 
-china_goroskop()
+def num_revers():
+    #   Проверяем сколько цифр всего
+    #   Есле 5, то реверс
+    #   Если больше то реверс 5 с конца
+    num = input()
+    if len(num) == 5:
+        return print(int(num[::-1]))
+    elif len(num) == 6:
+        result = num[0] + num[5:0:-1]
+        return print(result)
+    else:
+        return print('Формат не соответсвует условиям')
+
+def standart_ac():
+    #   вставляем запятые для больших чисел
+    num = input()
+    x = []
+    counter = 0
+    if len(num) <= 3:
+        return print(num)
+    else:
+        num = num[::-1]
+        for i in range(len(num)):
+            x.append(num[i])
+            counter += 1
+            if counter == 3 and (i+1) != len(num):
+                x.append(',')
+                counter = 0
+        print(*x[::-1], sep='')
+
+standart_ac()
