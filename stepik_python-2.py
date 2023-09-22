@@ -2,24 +2,26 @@
 Уроки второй части курса "Поколение Python"
 """
 
+
 def retry_learn_1():
     #   Просто выводим в столбик набор вычислений
     from math import sqrt
     a, b = int(input()), int(input())
     return print(
-            a + b,
-            a - b,
-            a * b,
-            a / b,
-            a // b,
-            a % b,
-            sqrt(a ** 10 + b ** 10),
-            sep = "\n"
-            )
+        a + b,
+        a - b,
+        a * b,
+        a / b,
+        a // b,
+        a % b,
+        sqrt(a ** 10 + b ** 10),
+        sep="\n"
+    )
+
 
 def imt_humen():
     #   Расчет индекса массы тела человека
-    weight, height = float(input( )), float(input())
+    weight, height = float(input()), float(input())
     imt = weight / height ** 2
     if imt < 18.5:
         return print("Недостаточная масса")
@@ -27,6 +29,7 @@ def imt_humen():
         return print("Избыточная масса")
     else:
         return print("Оптимальная масса")
+
 
 def line_cost():
     #   Вычисление стоимости строки при условии цены 60 коп. за символ
@@ -42,6 +45,7 @@ def line_cost():
     """
     return print(f'{int(summa)} р. {(summa % 1) * 100:.0f} коп.')
 
+
 def spice_words():
     #   считаем слова в строке
     #   проверяем, что в строке есть не только пробелы
@@ -54,13 +58,17 @@ def spice_words():
         string = string.split(" ")
         return print(len(list(filter(None, string))))
 
+
 def spice_words_1():
     print(len(input().split()))
 
+
 def china_goroskop():
     #   Определить какой год по гороскопу
-    goroskop = ['Дракон','Змея','Лошадь','Овца','Обезьяна','Петух','Собака','Свинья','Крыса','Бык','Тигр','Заяц']
+    goroskop = ['Дракон', 'Змея', 'Лошадь', 'Овца', 'Обезьяна', 'Петух', 'Собака', 'Свинья', 'Крыса', 'Бык', 'Тигр',
+                'Заяц']
     return print(goroskop[int(input()) % 12 - 8])
+
 
 def num_revers():
     #   Проверяем сколько цифр всего
@@ -75,6 +83,7 @@ def num_revers():
     else:
         return print('Формат не соответсвует условиям')
 
+
 def standart_ac():
     #   вставляем запятые для больших чисел
     num = input()
@@ -87,9 +96,27 @@ def standart_ac():
         for i in range(len(num)):
             x.append(num[i])
             counter += 1
-            if counter == 3 and (i+1) != len(num):
+            if counter == 3 and (i + 1) != len(num):
                 x.append(',')
                 counter = 0
         print(*x[::-1], sep='')
 
-standart_ac()
+
+def bin_format(value: int) -> str:
+    return f"{value:b}"
+
+def win_number():
+    wn = bin_format(value)
+    val = f"0b{wn[1:]}{wn[:1]}"
+    return val
+
+def int_format():
+    return eval(win_number())
+
+def iosif_funk():
+    
+
+
+if __name__ == '__main__':
+    value = int(input())
+    print(int_format())
